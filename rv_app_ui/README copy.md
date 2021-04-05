@@ -5,19 +5,15 @@ https://dasky.xyz/posts/2020/08/12/an-iot-birdhouse-with-elixir-nerves-phoenix-l
 https://git.coco.study/dkhaapam/bird_app
 ## Hardware needed
 
-We are using the following hardware for our birdhouse:
+We are using the following hardware for our rv LED:
 
-- Raspberry Pi 3
-- Raspberry Pi Camera V2
+- Raspberry Pi 0
 - A simple LED connected to GPIO Pin 18 and GND
-- A simple Servo motor connected to GPIO Pin 23, 5V and GND
 - A DHT22 Temperature/Humidity sensor connected to GPIO Pin 4, 3.3V and GND
 
 
 |       | GND | 3.3V | 5V | GPIO |
 |-------|-----|------|----|------|
-| DHT22 | x   | x    |    | 4    |
-| Servo | x   |      | x  | 23   |
 | LED   | x   |      |    | 18   |
 
 ## Install ASDF
