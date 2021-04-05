@@ -72,7 +72,7 @@ Hardware - Nerves project - sensor component project
 ```bash
 mix nerves.new rv_app_hardware
 ```
-This is what projects/rv looks like
+This is what the projects rv folder looks like..
 ```
 ls -ltra
 ..
@@ -85,8 +85,6 @@ rv_app_ui
 .git
 
 
-
-
 ## Setup Sdcard boot label.
 
 These changes use your project name to label the SDcard.
@@ -94,23 +92,28 @@ It changes standard BOOT-A and BOOT-B label to APPNAM±E-A or APPNAME-B.
 
 You need to make changes to config.exs, target.exs and add copies of fwup.conf and cmdline.txt to the config folder
 in your firmware project.
-(Note: Manual process until I can work out how to do this with variable substitution)
+(Note: This is the manual process until I can work out how to do this with variable substitution)
 
 Copy fwup.conf to Your config/ Directory
 See Overwriting Files in the Boot Partition in https://hexdocs.pm/nerves/advanced-configuration.html
 
 ```
-# Locate the fwup.conf files available in your deps directory
+Locate the fwup.conf files available in your deps directory
+```
 find deps -name fwup.conf
-# Copy the one that matches your target to the config directory.
+```
+Copy the one that matches your target to the config directory.
+```
 cp deps/nerves_system_rpi0/fwup.conf config/
-# Also copy cmdline.txt as you'll need it below.
+```
+Also copy cmdline.txt as you'll need it below.
+```
 cp deps/nerves_system_rpi0/cmdline.txt config/
 ```
 
 edit the folowing 3 lines in config/fwup.conf and change BOOT-A and BOOT-B to nerves app name.
 
-```
+```bash
 fat_setlabel(${BOOT_A_PART_OFFSET}, "RVAPP-A")
 fat_setlabel(${BOOT_A_PART_OFFSET}, "RVAPP-A")
 fat_setlabel(${BOOT_B_PART_OFFSET}, "RVAPP-B")
@@ -123,14 +126,13 @@ Changes to config.exs to add new path to config/fwup.conf
 config :nerves, :firmware, 
   rootfs_overlay: "rootfs_overlay",
   fwup_conf: "config/fwup.conf"
-
 ```
 
 Changes to target.exs
-```
-# This line adds project name to iex prompt on rpi.
-config :iex, default_prompt: "%prefix(%counter)_rvapp>"
 
+This line adds project name to iex prompt on rpi.
+```
+config :iex, default_prompt: "%prefix(%counter)_rvapp>"
 ```
 
 ## Setup Phoenix Project
