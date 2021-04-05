@@ -1,9 +1,11 @@
 # RV app - Nerves app to show how to switch on LED from Phoenix Liveview page
 
 This is an uncompleted project
+
 DONE:
 1. Create poncho project and setup sdcard naming.
 2. Tested nerves firmare project running on rpi0. - 5/04/21
+
 TODO:
 3. Add Led config and LED Component to hardware / firmware and ui projects.
 4. Add LED on/off button to Phoenix / Liveview ui project. 
@@ -108,7 +110,6 @@ in your firmware project.
 Copy fwup.conf to Your config/ Directory
 See Overwriting Files in the Boot Partition in https://hexdocs.pm/nerves/advanced-configuration.html
 
-```
 Locate the fwup.conf files available in your deps directory
 ```
 cd rv_app_firmware
