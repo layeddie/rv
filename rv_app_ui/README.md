@@ -6,7 +6,7 @@ This is project is in progress - not completed.
 
 DONE:
 1. Create poncho project and setup sdcard naming.
-2. Tested nerves firmare project running on rpi0. - 05/04/21
+2. Tested nerves rv_app_firmare project running on rpi0. - 05/04/21
 
 TODO:
 
