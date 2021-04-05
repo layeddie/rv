@@ -1,7 +1,8 @@
-# RV app - Nerves app to show how to switch on LED from 
+# RV app - Nerves app to show how to switch on LED from Phoenix Liveview page
 
-![Birdhouse dashboard in action](https://dev-to-uploads.s3.amazonaws.com/i/odorqq05xell588pnc0s.png)
-
+Inspiration taken from Nerves Birdapp project
+https://dasky.xyz/posts/2020/08/12/an-iot-birdhouse-with-elixir-nerves-phoenix-liveview-components/
+https://git.coco.study/dkhaapam/bird_app
 ## Hardware needed
 
 We are using the following hardware for our birdhouse:
@@ -18,6 +19,13 @@ We are using the following hardware for our birdhouse:
 | DHT22 | x   | x    |    | 4    |
 | Servo | x   |      | x  | 23   |
 | LED   | x   |      |    | 18   |
+
+## Install ASDF
+Using ASDF to manage elixir and erlang versions using the ASDF ./tools-versions file in this project
+There are many good guides for installing ASDF. This is just one example.
+https://elixircasts.io/installing-elixir-with-asdf
+https://github.com/asdf-vm/asdf-elixir
+https://github.com/asdf-vm/asdf
 
 ## Setup Elixir
 To setup your development environment on either Mac, Linux or Windows head over to the official nerves documentation.
@@ -66,7 +74,6 @@ mix nerves.new rv_app_hardware
 
 ## Setup Sdcard boot label.
 
-This section added after cloning from https://git.coco.study/dkhaapam/bird_app
 These changes use your project name to label the SDcard.
 It changes standard BOOT-A and BOOT-B label to APPNAM±E-A or APPNAME-B.
 
@@ -111,7 +118,7 @@ config :iex, default_prompt: "%prefix(%counter)_rvapp>"
 
 ```
 
-## Setup Project
+## Setup Phoenix Project
 
 1. Prepare your Phoenix project to build JavaScript and CSS assets:
 
