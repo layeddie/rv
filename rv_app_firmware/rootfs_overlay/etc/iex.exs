@@ -19,5 +19,8 @@ if RingLogger in Application.get_env(:logger, :backends, []) do
   or print the next messages in the log:
 
     RingLogger.next
+    Application: rvapp
+    Host developer source location:
+    Github repo url:
   """)
 end

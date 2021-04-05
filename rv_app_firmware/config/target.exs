@@ -13,7 +13,7 @@ config :shoehorn,
 # this feature.
 
 config :nerves_runtime, :kernel, use_system_registry: false
-
+config :iex, default_prompt: "%prefix(%counter)_rv_app>"
 # Erlinit can be configured without a rootfs_overlay. See
 # https://github.com/nerves-project/erlinit/ for more information on
 # configuring erlinit.
