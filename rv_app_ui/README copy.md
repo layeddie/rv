@@ -111,34 +111,13 @@ config :iex, default_prompt: "%prefix(%counter)_rvapp>"
 
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Setup Project
 
 1. Prepare your Phoenix project to build JavaScript and CSS assets:
 
 These steps only need to be done once.
 ```bash
-cd bird_app_ui
+cd rv_app_ui
 mix deps.get
 npm install --prefix assets
 ```
@@ -156,7 +135,7 @@ mix phx.digest
 3. Change to the firmware app directory
 
 ```bash
-cd ../bird_app_firmware
+cd ../rv_app_firmware
 ```
 
 4. Specify your target and other environment variables as needed:
@@ -180,10 +159,10 @@ export MIX_ENV=dev
 Configure the hardware pins and the ssh keys you want to use
 
 ```elixir
-# bird_app/bird_app_firmware/config/target.exs
+# bird_app/rv_app_firmware/config/target.exs
 
 # ...
-config :bird_app_hardware,
+config :rv_app_hardware,
   led_pin: 18,
   dht_pin: 4,
   servo_pin: 23
@@ -217,65 +196,10 @@ mix firmware.burn
 
 ```bash
 #create new firmware
-cd bird_app_firmware
+cd rv_app_firmware
 mix deps.get
 mix firmware
 mix upload
 ```
 
 
-## Ready for production?
-
-If you are ready to deploy to a production environment set your MIX_ENV environment variable to prod
-
-```bash
-export MIX_ENV=prod
-```
-
-And configure the domain and SSL configuration accordingly like in the following example:
-
-```elixir
-# bird_app/bird_app_firmware/config/target.exs
-
-# ...
-config :bird_app_ui, BirdAppUiWeb.Endpoint,
-  # Nerves root filesystem is read-only, so disable the code reloader
-  code_reloader: false,
-  http: [port: 80, protocol_options: [idle_timeout: :infinity]],
-  # Use compile-time Mix config instead of runtime environment variables
-  load_from_system_env: false,
-  # Start the server since we're running in a release instead of through `mix`
-  server: true,
-  url: [host: "birdhouse.cam", port: 443]
-# ...
-```
-
-```elixir
-# bird_app/bird_app_ui/config/prod.exs
-
-# ...
-config :bird_app_ui, BirdAppUiWeb.Endpoint,
-  cache_static_manifest: "priv/static/cache_manifest.json",
-  check_origin: ["//*.birdhouse.cam"],
-  live_reload: [
-    patterns: [
-      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
-      ~r"priv/gettext/.*(po)$",
-      ~r"lib/bird_app_ui_web/(live|views)/.*(ex)$",
-      ~r"lib/bird_app_ui_web/templates/.*(eex)$"
-    ]
-  ],
-  https: [
-    port: 443,
-    cipher_suite: :strong,
-    otp_app: :bird_app_ui,
-    keyfile: "priv/crt.key",
-    certfile: "priv/crt.crt",
-    cacertfile: "priv/crt.ca-bundle",
-    transport_options: [socket_opts: [:inet6]]
-  ]
-
-config :bird_app_ui, BirdAppUiWeb.Endpoint,
-  force_ssl: [hsts: true]
-# ...
-```
