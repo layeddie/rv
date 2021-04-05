@@ -52,7 +52,13 @@ intialise git project
 ```bash
 git init
 ```
-Then create 3 separate projects.
+Add ASDF .tool-versions file to rv project folder
+```
+touch .tool-versions
+```
+edit .tool-versions and add elixir 1.11.3-otp-23 or whatever version you are using.
+
+Then create 3 separate projects under the rv directory
 
 Ui - Phoenix / liveview project
 ```bash
@@ -66,6 +72,17 @@ Hardware - Nerves project - sensor component project
 ```bash
 mix nerves.new rv_app_hardware
 ```
+This is what projects/rv looks like
+```
+ls -ltra
+..
+.tool-versions 
+rv_app_firmware
+.elixir_ls
+rv_app_hardware
+.
+rv_app_ui
+.git
 
 
 
