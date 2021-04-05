@@ -44,6 +44,13 @@ To setup your development environment on either Mac, Linux or Windows head over 
 
 [Elixir Installation](https://hexdocs.pm/nerves/installation.html)
 
+Test your elixir installation
+```
+$ elixir -v
+Erlang/OTP 23 [erts-11.1.1] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [hipe]
+
+Elixir 1.11.3 (compiled with Erlang/OTP 23)
+```
 ## Setup node.js
 
 We do also need node.js for our UI.
@@ -101,10 +108,12 @@ rv_app_ui
 ## Setup Sdcard boot label in rv_app_firmware project.
 
 These changes use your project name to label the SDcard.
-It changes standard BOOT-A and BOOT-B label to APPNAM±E-A or APPNAME-B.
+
+It changes standard BOOT-A and BOOT-B label to APPNAME-A or APPNAME-B.
 
 You need to make changes to config.exs, target.exs and add copies of fwup.conf and cmdline.txt to the config folder
 in your firmware project.
+
 (Note: This is the manual process until I can work out how to do this with variable substitution)
 
 Copy fwup.conf to Your config/ Directory
