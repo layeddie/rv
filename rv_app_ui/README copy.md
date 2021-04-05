@@ -19,14 +19,16 @@ We are using the following hardware for our rv LED:
 ## Install ASDF
 Using ASDF to manage elixir and erlang versions using the ASDF ./tools-versions file in this project
 There are many good guides for installing ASDF. This is just one example.
-https://elixircasts.io/installing-elixir-with-asdf
+[Installing Elixir with ASDF](https://elixircasts.io/installing-elixir-with-asdf)
+
 https://github.com/asdf-vm/asdf-elixir
+
 https://github.com/asdf-vm/asdf
 
 ## Setup Elixir
 To setup your development environment on either Mac, Linux or Windows head over to the official nerves documentation.
 
-[Installation](https://hexdocs.pm/nerves/installation.html)
+[Elixir Installation](https://hexdocs.pm/nerves/installation.html)
 
 ## Setup node.js
 
@@ -36,7 +38,7 @@ We do also need node.js for our UI.
 
 ## Create Main Poncho projects
 
-https://embedded-elixir.com/post/2017-05-19-poncho-projects/
+[Poncho projects](https://embedded-elixir.com/post/2017-05-19-poncho-projects/)
 
 This poncho project consists of 3 separate project folders.
 First create your project folder.
@@ -230,5 +232,7 @@ or print the next messages in the log:
 
 iex(1)_rv_app> 
 ```
+Your SDCARD should be lablled RVAPP-A or RVAPP-B when viewing in Finder(MACOS)
+
 
 
