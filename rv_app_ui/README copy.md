@@ -1,7 +1,18 @@
 # RV app - Nerves app to show how to switch on LED from Phoenix Liveview page
 
+This is an uncompleted project
+DONE:
+1. Create poncho project and setup sdcard naming.
+2. Tested nerves firmare project running on rpi0. - 5/04/21
+TODO:
+3. Add Led config and LED Component to hardware / firmware and ui projects.
+4. Add LED on/off button to Phoenix / Liveview ui project. 
+5. Test LED turns on and off from liveview page.
+ - In progress
+
 Inspiration taken from Nerves Birdapp project
 https://dasky.xyz/posts/2020/08/12/an-iot-birdhouse-with-elixir-nerves-phoenix-liveview-components/
+
 https://git.coco.study/dkhaapam/bird_app
 ## Hardware needed
 
@@ -19,6 +30,7 @@ We are using the following hardware for our rv LED:
 ## Install ASDF
 Using ASDF to manage elixir and erlang versions using the ASDF ./tools-versions file in this project
 There are many good guides for installing ASDF. This is just one example.
+
 [Installing Elixir with ASDF](https://elixircasts.io/installing-elixir-with-asdf)
 
 https://github.com/asdf-vm/asdf-elixir
@@ -83,9 +95,8 @@ rv_app_hardware
 .
 rv_app_ui
 .git
-
-
-## Setup Sdcard boot label.
+```
+## Setup Sdcard boot label in rv_app_firmware project.
 
 These changes use your project name to label the SDcard.
 It changes standard BOOT-A and BOOT-B label to APPNAM±E-A or APPNAME-B.
@@ -100,6 +111,7 @@ See Overwriting Files in the Boot Partition in https://hexdocs.pm/nerves/advance
 ```
 Locate the fwup.conf files available in your deps directory
 ```
+cd rv_app_firmware
 find deps -name fwup.conf
 ```
 Copy the one that matches your target to the config directory.
@@ -165,7 +177,7 @@ cd ../rv_app_firmware
 4. Specify your target and other environment variables as needed:
 
 ```bash
-export MIX_TARGET=rpi3
+export MIX_TARGET=rpi0
 export MIX_ENV=dev
 
 # For the telegram bot functions
@@ -188,8 +200,6 @@ Configure the hardware pins and the ssh keys you want to use
 # ...
 config :rv_app_hardware,
   led_pin: 18,
-  dht_pin: 4,
-  servo_pin: 23
 # ...
 
 # ...
@@ -251,7 +261,13 @@ or print the next messages in the log:
 
 iex(1)_rv_app> 
 ```
-Your SDCARD should be lablled RVAPP-A or RVAPP-B when viewing in Finder(MACOS)
+Your SDCARD should be labelled RVAPP-A or RVAPP-B when viewing in Finder(MACOS)
 
 
+------------------------------------------------------------------------
+TODO:
+3. Add Led config and LED Component to hardware / firmware and ui projects.
+4. Add LED on/off button to Phoenix / Liveview ui project. 
+5. Test LED turns on and off from liveview page.
+ - In progress
 
