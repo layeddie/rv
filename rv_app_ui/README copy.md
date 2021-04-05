@@ -4,7 +4,7 @@ This is an uncompleted project
 
 DONE:
 1. Create poncho project and setup sdcard naming.
-2. Tested nerves firmare project running on rpi0. - 5/04/21
+2. Tested nerves firmare project running on rpi0. - 05/04/21
 
 TODO:
 3. Add Led config and LED Component to hardware / firmware and ui projects.
@@ -266,7 +266,9 @@ Your SDCARD should be labelled RVAPP-A or RVAPP-B when viewing in Finder(MACOS)
 
 
 ------------------------------------------------------------------------
-TODO:
+
+TODO: 05/04/21
+
 3. Add Led config and LED Component to hardware / firmware and ui projects.
 4. Add LED on/off button to Phoenix / Liveview ui project. 
 5. Test LED turns on and off from liveview page.
