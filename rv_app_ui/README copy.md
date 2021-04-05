@@ -34,7 +34,7 @@ We do also need node.js for our UI.
 
 [asdf-nodejs](https://github.com/asdf-vm/asdf-nodejs)
 
-## Create Poncho projects
+## Create Main Poncho projects
 
 https://embedded-elixir.com/post/2017-05-19-poncho-projects/
 
@@ -203,6 +203,32 @@ cd rv_app_firmware
 mix deps.get
 mix firmware
 mix upload
+```
+
+Nerves CLI should look like this..
+```
+$ ssh nerves.local
+Interactive Elixir (1.11.3) - press Ctrl+C to exit (type h() ENTER for help)
+████▄▖    ▐███
+█▌  ▀▜█▙▄▖  ▐█
+█▌ ▐█▄▖▝▀█▌ ▐█   N  E  R  V  E  S
+█▌   ▝▀█▙▄▖ ▐█
+███▌    ▀▜████
+
+Toolshed imported. Run h(Toolshed) for more info.
+RingLogger is collecting log messages from Elixir and Linux. To see the
+messages, either attach the current IEx session to the logger:
+
+  RingLogger.attach
+
+or print the next messages in the log:
+
+  RingLogger.next
+  Application: rvapp
+  Host developer source location:
+  Github repo url:
+
+iex(1)_rv_app> 
 ```
 
 
