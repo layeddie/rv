@@ -34,7 +34,8 @@ We are using the following hardware for our rv LED:
 | LED   | x   |      |    | 18   |
 
 ## Install ASDF
-Using ASDF to manage elixir and erlang versions using the ASDF ./tools-versions file in this project
+Use ASDF to manage elixir and erlang versions. 
+Using the ASDF ./tools-versions file in this project
 There are many good guides for installing ASDF. This is just one example.
 
 [Installing Elixir with ASDF](https://elixircasts.io/installing-elixir-with-asdf)
@@ -54,6 +55,19 @@ $ elixir -v
 Erlang/OTP 23 [erts-11.1.1] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [hipe]
 
 Elixir 1.11.3 (compiled with Erlang/OTP 23)
+```
+Check nerves versions in the firmware folder
+```
+~/projects/learn/rv/rv_app_firmware> mix nerves.info
+Nerves:           1.7.5
+Nerves Bootstrap: 1.10.2
+Elixir:           1.11.3
+|nerves_bootstrap| Info End
+```
+Check Phoenix / liveview version
+```
+~/projects/learn/rv/rv_app_ui> mix phx.new --version
+Phoenix v1.5.7
 ```
 ## Setup node.js
 
