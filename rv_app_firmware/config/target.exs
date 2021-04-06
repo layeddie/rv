@@ -1,5 +1,25 @@
 import Config
 
+import_config "../../rv_app_ui/config/config.exs"
+
+  # rvapp - add led pin GPIO pin
+config :rv_app_hardware,
+  led_pin: 18,
+
+  # rvapp - add database location for camera bird snaps
+config :rv_app_ui,
+  entries_db_location: "/root/data/bird_snaps"
+
+config :bird_app_ui, BirdAppUiWeb.Endpoint,
+  # Nerves root filesystem is read-only, so disable the code reloader
+  code_reloader: false,
+  http: [port: 80, protocol_options: [idle_timeout: :infinity]],
+  # Use compile-time Mix config instead of runtime environment variables
+  load_from_system_env: false,
+  # Start the server since we're running in a release instead of through `mix`
+  server: true,
+  url: [host: "birdhouse.cam", port: 443]
+
 # Use shoehorn to start the main application. See the shoehorn
 # docs for separating out critical OTP applications such as those
 # involved with firmware updates.
@@ -13,7 +33,7 @@ config :shoehorn,
 # this feature.
 
 config :nerves_runtime, :kernel, use_system_registry: false
-config :iex, default_prompt: "%prefix(%counter)_rv_app>"
+config :iex, default_prompt: "%prefix(%counter)_rv_app>" # rvapp - added to add rvapp name in rpi0 iex prompt.
 # Erlinit can be configured without a rootfs_overlay. See
 # https://github.com/nerves-project/erlinit/ for more information on
 # configuring erlinit.
@@ -44,11 +64,12 @@ if keys == [],
     See your project's config.exs for this error message.
     """)
 
-config :nerves_ssh,
+config :nerves_firmware_ssh,
   authorized_keys: Enum.map(keys, &File.read!/1)
 
 # Configure the network using vintage_net
 # See https://github.com/nerves-networking/vintage_net for more information
+# rvapp - added wlan0 parameters.
 config :vintage_net,
   regulatory_domain: "US",
   config: [
@@ -58,7 +79,16 @@ config :vintage_net,
        type: VintageNetEthernet,
        ipv4: %{method: :dhcp}
      }},
-    {"wlan0", %{type: VintageNetWiFi}}
+    {"wlan0",
+     %{
+       type: VintageNetWiFi,
+       vintage_net_wifi: %{
+         key_mgmt: :wpa_psk,
+         ssid: System.get_env("NERVES_NETWORK_SSID"),
+         psk: System.get_env("NERVES_NETWORK_PSK")
+       },
+       ipv4: %{method: :dhcp}
+     }}
   ]
 
 config :mdns_lite,
