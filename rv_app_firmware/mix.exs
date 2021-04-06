@@ -13,6 +13,7 @@ defmodule RvAppFirmware.MixProject do
       archives: [nerves_bootstrap: "~> 1.10"],
       start_permanent: Mix.env() == :prod,
       build_embedded: true,
+      aliases: [loadconfig: [&bootstrap/1]],
       deps: deps(),
       releases: [{@app, release()}],
       preferred_cli_target: [run: :host, test: :host]
@@ -30,7 +31,11 @@ defmodule RvAppFirmware.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # Dependencies for all targets
+      # Dependencies for all targets.
+      # layeddie - added 3 lines below to link poncho projects and add nerves_firmware_ssh
+      {:rv_app_hardware, path: "../rv_app_hardware"},
+      {:rv_app_ui, path: "../rv_app_ui"},
+      {:nerves_firmware_ssh, "~> 0.3", targets: @all_targets},
       {:nerves, "~> 1.7.0", runtime: false},
       {:shoehorn, "~> 0.7.0"},
       {:ring_logger, "~> 0.8.1"},
@@ -61,7 +66,7 @@ defmodule RvAppFirmware.MixProject do
       cookie: "#{@app}_cookie",
       include_erts: &Nerves.Release.erts/0,
       steps: [&Nerves.Release.init/1, :assemble],
-      strip_beams: Mix.env() == :prod or [keep: ["Docs"]]
+      strip_beams: Mix.env() == :prod # Changed
     ]
   end
 end
