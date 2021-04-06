@@ -26,8 +26,6 @@ We are using the following hardware for our rv LED:
 
 - Raspberry Pi 0
 - A simple LED connected to GPIO Pin 18 and GND
-- A DHT22 Temperature/Humidity sensor connected to GPIO Pin 4, 3.3V and GND
-
 
 |       | GND | 3.3V | 5V | GPIO |
 |-------|-----|------|----|------|
