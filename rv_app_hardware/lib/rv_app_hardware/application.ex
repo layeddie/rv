@@ -7,8 +7,8 @@ defmodule RvAppHardware.Application do
 
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: BirdAppHardware.Worker.start_link(arg)
-      # {BirdAppHardware.Worker, arg}
+      # Starts a worker by calling: RvAppHardware.Worker.start_link(arg)
+      # {RvAppHardware.Worker, arg}
      ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

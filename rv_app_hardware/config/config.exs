@@ -1,7 +1,5 @@
 use Mix.Config
 
-config :picam, camera: Picam.FakeCamera
-
 config :logger,
   level: :debug,
   utc_log: true

@@ -15,7 +15,7 @@ information about targets see:
 ```elixir
 def deps do
   [
-    {:bird_app_hardware, "~> 0.1.0"}
+    {:rv_app_hardware, "~> 0.1.0"}
   ]
 end
 ```
