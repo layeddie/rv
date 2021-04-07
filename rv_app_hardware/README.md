@@ -12,18 +12,13 @@ a short name like `rpi3` that maps to a Nerves system image for that platform.
 All of this logic is in the generated `mix.exs` and may be customized. For more
 information about targets see:
 
-https://hexdocs.pm/nerves/targets.html#content
-
-## Getting Started
-
-To start your Nerves app:
-  * `export MIX_TARGET=my_target` or prefix every command with
-    `MIX_TARGET=my_target`. For example, `MIX_TARGET=rpi3`
-  * Install dependencies with `mix deps.get`
-  * Create firmware with `mix firmware`
-  * Burn to an SD card with `mix firmware.burn`
-
-## Learn more
+```elixir
+def deps do
+  [
+    {:bird_app_hardware, "~> 0.1.0"}
+  ]
+end
+```
 
   * Official docs: https://hexdocs.pm/nerves/getting-started.html
   * Official website: https://nerves-project.org/
