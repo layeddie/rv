@@ -42,7 +42,7 @@ defmodule RvAppFirmware.MixProject do
       # layeddie - added 3 lines below to link poncho projects and add nerves_firmware_ssh
       {:rv_app_hardware, path: "../rv_app_hardware"},
       {:rv_app_ui, path: "../rv_app_ui"},
-      {:nerves_firmware_ssh, "~> 0.3", targets: @all_targets},
+      {:nerves_ssh, "~> 0.2.1", targets: @all_targets},
       {:nerves, "~> 1.7.0", runtime: false},
       {:shoehorn, "~> 0.7.0"},
       {:ring_logger, "~> 0.8.1"},
@@ -50,7 +50,7 @@ defmodule RvAppFirmware.MixProject do
 
       # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.11.3", targets: @all_targets},
-      {:nerves_pack, "~> 0.4.0", targets: @all_targets},
+      {:nerves_pack, "~> 0.4.1", targets: @all_targets},
 
       # Dependencies for specific targets
       {:nerves_system_rpi, "~> 1.13", runtime: false, targets: :rpi},
