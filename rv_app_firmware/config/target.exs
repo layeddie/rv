@@ -4,11 +4,11 @@ import_config "../../rv_app_ui/config/config.exs"
 
   # rvapp - add led pin GPIO pin
 config :rv_app_hardware,
-  led_pin: 18,
+  led_pin: 18
 
   # rvapp - add database location for camera bird snaps
-config :rv_app_ui,
-  entries_db_location: "/root/data/bird_snaps"
+  # config :rv_app_ui,
+  # entries_db_location: "/root/data/bird_snaps"
 
 config :bird_app_ui, BirdAppUiWeb.Endpoint,
   # Nerves root filesystem is read-only, so disable the code reloader
