@@ -2,7 +2,7 @@
 
 # RV app - Nerves app to show how to switch on LED from Phoenix Liveview page
 
-This is project is in progress - not completed.
+This is project is in progress - not complet
 
 DONE:
 1. Create poncho project and setup sdcard naming.
@@ -10,9 +10,10 @@ DONE:
 
 TODO:
 
-3. Add Led config and LED Component to hardware / firmware and ui projects.
-4. Add LED on/off button to Phoenix / Liveview ui project. 
-5. Test LED turns on and off from liveview page.
+3. Test LED turns on and off from rpi iex prompt.
+4. Add Led config and LED Component to hardware / firmware and ui projects.
+5. Add LED on/off button to Phoenix / Liveview ui project. 
+6. Test LED turns on and off from liveview page.
  - In progress
 
 Inspiration taken from Nerves Birdapp project
@@ -20,6 +21,8 @@ Inspiration taken from Nerves Birdapp project
 https://dasky.xyz/posts/2020/08/12/an-iot-birdhouse-with-elixir-nerves-phoenix-liveview-components/
 
 https://git.coco.study/dkhaapam/bird_app
+
+https://hexdocs.pm/nerves/user-interfaces.html#phoenix-web-interfaces
 ## Hardware needed
 
 We are using the following hardware for our rv LED:
@@ -291,12 +294,38 @@ iex(1)_rv_app>
 Your SDCARD should be labelled RVAPP-A or RVAPP-B when viewing in Finder(MACOS)
 
 
+## Test LED turns on and off from rpi iex prompt
+
+The firmware part of the application can now be tested in isolation from the ui.
+
+```bash
+iex(1)_rv_app> alias Circuits.GPIO
+Circuits.GPIO
+iex(2)_rv_app> GPIO.open(18, :output)
+{:ok, #Reference<0.1090687248.268828682.162864>}
+iex(3)_rv_app> {:ok, led} = v 2
+{:ok, #Reference<0.1090687248.268828682.162864>}
+iex(4)_rv_app> led
+#Reference<0.1090687248.268828682.162864>
+iex(5)_rv_app> GPIO.write led, 1
+:ok
+iex(6)_rv_app> GPIO.write led, 0
+:ok
+iex(7)_rv_app> GPIO.write led, 1
+:ok
+iex(8)_rv_app>
+```
+
+
 ------------------------------------------------------------------------
+
+Test LED turns on and off from rpi iex prompt
 
 TODO: 05/04/21
 
-3. Add Led config and LED Component to hardware / firmware and ui projects.
-4. Add LED on/off button to Phoenix / Liveview ui project. 
-5. Test LED turns on and off from liveview page.
+3. Test LED turns on and off from rpi iex prompt.
+4. Add Led config and LED Component to hardware / firmware and ui projects.
+5. Add LED on/off button to Phoenix / Liveview ui project. 
+6. Test LED turns on and off from liveview page.
  - In progress
 
