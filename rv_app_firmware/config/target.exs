@@ -25,7 +25,7 @@ config :bird_app_ui, BirdAppUiWeb.Endpoint,
 # involved with firmware updates.
 
 config :shoehorn,
-  init: [:nerves_runtime, :nerves_pack],
+  init: [:nerves_runtime, :vintage_net, :nerves_pack, :nerves_ssh],
   app: Mix.Project.config()[:app]
 
 # Nerves Runtime can enumerate hardware devices and send notifications via
@@ -64,7 +64,7 @@ if keys == [],
     See your project's config.exs for this error message.
     """)
 
-config :nerves_firmware_ssh,
+config :nerves_ssh,
   authorized_keys: Enum.map(keys, &File.read!/1)
 
 # Configure the network using vintage_net
