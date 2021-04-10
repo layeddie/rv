@@ -7,13 +7,13 @@ This is project is in progress - not complet
 DONE:
 1. Create poncho project and setup sdcard naming.
 2. Tested nerves rv_app_firmare project running on rpi0. - 05/04/21
+3. Test LED turns on and off from rpi iex prompt.
 
 TODO:
-
-3. Test LED turns on and off from rpi iex prompt.
-4. Add Led config and LED Component to hardware / firmware and ui projects.
-5. Add LED on/off button to Phoenix / Liveview ui project. 
-6. Test LED turns on and off from liveview page.
+4. Test ui displays in browser.
+5. Add Led config and LED Component to hardware / firmware and ui projects.
+6. Add LED on/off button to Phoenix / Liveview ui project. 
+7. Test LED turns on and off from liveview page.
  - In progress
 
 Inspiration taken from Nerves Birdapp project
@@ -319,11 +319,9 @@ iex(8)_rv_app>
 
 ------------------------------------------------------------------------
 
-Test LED turns on and off from rpi iex prompt
-
 TODO: 05/04/21
 
-3. Test LED turns on and off from rpi iex prompt.
+3. Test ui app displays in browser.
 4. Add Led config and LED Component to hardware / firmware and ui projects.
 5. Add LED on/off button to Phoenix / Liveview ui project. 
 6. Test LED turns on and off from liveview page.
