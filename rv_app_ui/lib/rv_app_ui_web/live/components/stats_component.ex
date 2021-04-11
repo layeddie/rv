@@ -1,5 +1,5 @@
-defmodule BirdAppUiWeb.StatsComponent do
-  use BirdAppUiWeb, :live_component
+defmodule RvAppUiWeb.StatsComponent do
+  use RvAppUiWeb, :live_component
 
   @impl true
   def mount(socket) do

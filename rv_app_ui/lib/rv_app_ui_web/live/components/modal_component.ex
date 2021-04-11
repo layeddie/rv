@@ -1,5 +1,5 @@
-defmodule BirdAppUiWeb.ModalComponent do
-  use BirdAppUiWeb, :live_component
+defmodule RvAppUiWeb.ModalComponent do
+  use RvAppUiWeb, :live_component
 
   @defaults %{
     button: "Close",
