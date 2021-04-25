@@ -2,7 +2,7 @@
 
 # RV app - Nerves app to show how to switch on LED from Phoenix Liveview page
 
-This is project is in progress - not complet
+This is project is in progress - not complete
 
 DONE:
 1. Create poncho project and setup sdcard naming.
