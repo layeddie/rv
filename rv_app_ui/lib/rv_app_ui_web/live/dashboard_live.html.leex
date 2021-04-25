@@ -1,28 +1,5 @@
-<section class="container mx-auto my-10">
-  <div class="flex flex-wrap">
-    <%= live_component @socket, RvAppUiWeb.StatsComponent, id: "temperature", stats: @temperature, stats_name: "Temperature", color: "orange", icon: "fa-thermometer-half", character: "°C" %>
-    <%= live_component @socket, RvAppUiWeb.StatsComponent, id: "humidity", stats: @humidity, stats_name: "Humidity", color: "blue", icon: "fa-tint", character: "%" %>
-    <%= live_component @socket, RvAppUiWeb.StatsComponent, id: "snaps", stats: @snaps, stats_name: "Snaps", color: "green", icon: "fa-crow", character: "" %>
-  </div>
-</section>
-
-<div style="background-image: url(<%= Routes.static_path(@socket, "/images/wave.svg") %>);background-position-y: bottom;background-size: cover;">
-  <section class="container mx-auto mt-10">
-    <div class="flex flex-wrap">
-      <div class="w-full p-3 mx-auto" style="max-width: 680px;">
-        <div class="rounded shadow-lg p-2">
-          <svg class="rounded bg-cover" id="canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" style="background-image: url('video.mjpg');"></svg>
-        </div>
-      </div>
-
+<section class="container mx-auto mt-10">
       <div class="w-full md:flex-1 p-3">
-        <%= live_component @socket, BirdAppUiWeb.PowerSwitchComponent, id: "power-switch" %>
-        <%= live_component @socket, BirdAppUiWeb.ServoSwitchComponent, id: "servo-switch" %>
-        <%= live_component @socket, BirdAppUiWeb.TelegramSnapComponent, id: "telegram-snap" %>
-        <%= if @message do%>
-          <%= live_component @socket, BirdAppUiWeb.MessageComponent, id: "last-message", message: @message %>
-        <% end %>
+        <%= live_component @socket, RvAppUiWeb.PowerSwitchComponent, id: "power-switch" %>
       </div>
-    </div>
-  </section>
-</div>
+</section>

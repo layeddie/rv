@@ -10,7 +10,7 @@ config :rv_app_hardware,
   # config :rv_app_ui,
   # entries_db_location: "/root/data/bird_snaps"
 
-config :bird_app_ui, BirdAppUiWeb.Endpoint,
+config :rv_app_ui, RvAppUiWeb.Endpoint,
   # Nerves root filesystem is read-only, so disable the code reloader
   code_reloader: false,
   http: [port: 80, protocol_options: [idle_timeout: :infinity]],

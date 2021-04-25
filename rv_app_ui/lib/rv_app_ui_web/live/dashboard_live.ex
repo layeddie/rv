@@ -7,9 +7,8 @@ defmodule RvAppUiWeb.DashboardLive do
   end
 
   @impl true
-  def handle_info({:power_switched, state}, socket) do
-    send_update(BirdAppUiWeb.PowerSwitchComponent, id: "power-switch", power: state)
-    {:noreply, socket}
+  def handle_event("suggest", %{"q" => query}, socket) do
+    {:noreply, assign(socket, results: search(query), query: query)}
   end
 
   @impl true
@@ -37,4 +36,12 @@ defmodule RvAppUiWeb.DashboardLive do
         into: %{},
         do: {app, vsn}
   end
+
+
+  @impl true
+  def handle_info({:power_switched, state}, socket) do
+    send_update(RvAppUiWeb.PowerSwitchComponent, id: "power-switch", power: state)
+    {:noreply, socket}
+  end
+
 end
