@@ -316,6 +316,12 @@ iex(7)_rv_app> GPIO.write led, 1
 iex(8)_rv_app>
 ```
 
+<img src="led.jpg" width="800px" height="auto">
+
+
+
+
+
 
 ------------------------------------------------------------------------
 
