@@ -293,6 +293,7 @@ iex(1)_rv_app>
 ```
 Your SDCARD should be labelled RVAPP-A or RVAPP-B when viewing in Finder(MACOS)
 
+<img src="sdcard.png" width="800px" height="auto">
 
 ## Test LED turns on and off from rpi iex prompt
 
@@ -317,6 +318,7 @@ iex(8)_rv_app>
 ```
 
 <img src="led.jpg" width="800px" height="auto">
+
 
 
 
